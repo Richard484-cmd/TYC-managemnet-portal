@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Dancing+Script:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'DM Sans', system-ui, sans-serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --brand-navy-900: #031A3A;
+    --brand-navy-800: #0A2A5E;
+    --brand-navy-700: #092A5F;
+    --brand-navy-600: #123A6B;
+    --brand-gold: #F4B942;
+    --brand-gold-hover: #E6A82F;
+    --brand-cream: #FAF6F0;
+    --surface: #FFFFFF;
+    --border: #E2E8F0;
+    --text-heading: #0F172A;
+    --text-body: #334155;
+    --text-muted: #64748B;
+    --background: 210 20% 98%;
+    --foreground: 222 42% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 42% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 24% 11%;
+    --primary: 214 68% 28%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 222 42% 10%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 214 45% 95%;
+    --accent-foreground: 214 68% 28%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 214 68% 28%;
+    --sidebar: 222 45% 10%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-accent: 214 42% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --chart-1: 214 68% 28%;
+    --chart-2: 142 71% 45%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 0 72% 51%;
+    --chart-5: 214 28% 42%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 222 35% 7%;
+    --foreground: 210 20% 94%;
+    --card: 222 35% 10%;
+    --card-foreground: 210 20% 94%;
+    --popover: 222 35% 10%;
+    --popover-foreground: 210 20% 94%;
+    --primary: 213 65% 63%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 28% 17%;
+    --secondary-foreground: 210 20% 94%;
+    --muted: 222 20% 18%;
+    --muted-foreground: 215 16% 60%;
+    --accent: 214 30% 19%;
+    --accent-foreground: 210 20% 94%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 50%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+    --border: 222 20% 20%;
+    --input: 222 20% 20%;
+    --ring: 213 65% 63%;
+    --sidebar: 222 48% 6%;
+    --sidebar-foreground: 210 20% 80%;
+    --sidebar-accent: 214 36% 16%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --chart-1: 213 65% 63%;
+    --chart-2: 142 71% 50%;
+    --chart-3: 38 92% 55%;
+    --chart-4: 0 72% 55%;
+    --chart-5: 214 28% 58%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+  .public-site {
+    overflow-x: clip;
+    --background: 162 23% 97%;
+    --foreground: 218 35% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 218 35% 13%;
+    --muted: 165 18% 93%;
+    --muted-foreground: 214 18% 40%;
+    --secondary: 165 18% 93%;
+    --secondary-foreground: 218 35% 13%;
+    --border: 162 17% 86%;
+    --input: 162 17% 86%;
+    --accent: 43 88% 94%;
+    --accent-foreground: 218 58% 24%;
+  }
+}
+
+@layer utilities {
+  .font-serif { font-family: var(--font-display), Georgia, serif; }
+  .font-sans { font-family: var(--font-sans), system-ui, sans-serif; }
+  .font-script { font-family: 'Dancing Script', cursive; }
+  .scrollbar-thin { scrollbar-width: thin; scrollbar-color: hsl(var(--muted-foreground)) transparent; }
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background-color: hsl(var(--muted-foreground) / 0.3); border-radius: 3px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover { background-color: hsl(var(--muted-foreground) / 0.5); }
+}
+
+@keyframes hero-fade-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-image-fade { from { opacity: 0; } to { opacity: 1; } }
+.hero-animate-in { opacity: 0; animation: hero-fade-in 0.8s ease-out forwards; }
+.hero-animate-up { opacity: 0; animation: hero-fade-up 0.9s ease-out forwards; }
+.hero-image-fade { animation: hero-image-fade 1.2s ease-out forwards; }
+@keyframes hero-slide-in-left { from { opacity: 0; transform: translateX(-40vw); } to { opacity: 1; transform: translateX(0); } }
+@keyframes hero-slide-in-right { from { opacity: 0; transform: translateX(40vw); } to { opacity: 1; transform: translateX(0); } }
+.hero-slide-left { opacity: 0; animation: hero-slide-in-left 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.hero-slide-right { opacity: 0; animation: hero-slide-in-right 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide-left, .hero-slide-right { opacity: 1; animation: none; }
+}
+
+@keyframes hero-phrase-in { from { opacity: 0; transform: translateY(10px); filter: blur(3px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+.hero-phrase { display: inline-block; opacity: 0; animation: hero-phrase-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes typewriter-caret { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+.hero-typewriter { overflow: visible; }
+.hero-typewriter-caret { display: inline-block; width: 2px; margin-left: 2px; background: rgba(255, 255, 255, 0.8); animation: typewriter-caret 0.8s step-end infinite; vertical-align: baseline; }
+@keyframes home-fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.home-fade-up { opacity: 0; animation: home-fade-up 0.6s ease-out forwards; }
+@keyframes auth-panel-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.auth-panel-enter { animation: auth-panel-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .auth-panel-enter { animation: none; }
+}
+@keyframes btn-hover-lift { from { transform: translateY(0); } to { transform: translateY(-2px); } }
+@keyframes hero-bg-fade-in { from { opacity: 0; } to { opacity: 1; } }

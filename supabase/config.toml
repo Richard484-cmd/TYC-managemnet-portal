@@ -1,0 +1,11 @@
+[functions.automation-engine]
+verify_jwt = true
+entrypoint = "./functions/automation-engine/index.ts"
+
+[functions.virtual-meeting-access]
+verify_jwt = true
+entrypoint = "./functions/virtual-meeting-access/index.ts"
+
+[functions.virtual-meeting-manage]
+verify_jwt = true
+entrypoint = "./functions/virtual-meeting-manage/index.ts"
